@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+/* This is to make it so mobile devices cant scroll, it should make header not sticky due to overflow */
+@media only screen and (max-width: 500px) {
+    html, body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+}
+
+body {
+    background-color: #E7E7E7;
+    font-family: 'Lato', sans-serif;
+    padding: 0; margin: 0;
+}
+
+#app {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-areas: "head"
+                         "game"
+                         "scores"
+                         "comments"
+                         "footer";
+    grid-template-columns: auto;
+    grid-template-rows: 75px 900px 800px 600px 400px;
+}
+
+@media only screen and (max-width: 500px) {
+    #app {
+        grid-template-rows: 40px 900px 800px 600px 400px;
+    }  
+}
+
+/* only show  high scores table if screen is big enough*/
+/* @media only screen and  (max-width: 1270px) {
+    #highscorestable {
+        display: none;
+    }
+} */
+
+#header {
+    grid-area: head;
+    /* display:flex; */
+    background-image: url('Assets/CAMO.jpg');
+    z-index: 5;
+    -webkit-box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
+    -moz-box-shadow:    0px 3px 5px rgba(100, 100, 100, 0.49);
+    box-shadow:         0px 3px 5px rgba(100, 100, 100, 0.49);
+    top:0%;
+    position: -webkit-sticky;
+    position: sticky;
+    /* Bunch of stuff to make it so you cant select text which messes up game */
+    /*-webkit-touch-callout: none; /* iOS Safari */
+    /*-webkit-user-select: none; /* Safari */
+     /*-khtml-user-select: none; /* Konqueror HTML */
+       /*-moz-user-select: none; /* Firefox */
+        /*-ms-user-select: none; /* Internet Explorer/Edge */
+            /*user-select: none;*/
+}
+
+#inner-header {
+    width: 90%;
+    height:100%;
+    display: block;
+    margin: 0 auto;
+}
+
+#logo-container {
+    height: 100%;
+    display: table;
+    float:left;
+}
+
+#logo-container h1 {
+    color: white;
+    height:100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 46px;
+}
+
+@media only screen and (max-width: 500px) {
+    #logo-container h1 {
+        font-size: 20px;
+    }
+}
+
+#nav-list {
+    float: right;
+    height:100%;
+}
+
+@media only screen and (max-width: 500px) {
+    #nav-list{
+        width: 200px;
+    }
+}
+
+#nav-list a{
+    height: 100%;
+    width: 127px;
+    display: table;
+    float: left;
+    padding: 0px 20px;
+}
+
+@media only screen and (max-width: 500px) {
+    #nav-list{
+        /* width: 7px; */
+        display: none;
+    }
+}
+
+#nav-list a:hover {
+    background-color: darkolivegreen;
+    /* opacity: 100%; */
+}
+
+#nav-list a li  {
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    font-size: 20px;
+    pointer-events: none;
+    text-align: center;
+    /* padding-right: 20px; */
+}
+
+@media only screen and (max-width: 500px) {
+    #nav-list a li {
+        font-size: 7px;
+    }
+}
+
+#game-container {
+    grid-area: game;
+    display: grid;
+    position: relative;
+    /* display: inline; */
+}
+
+#game {
+    display: grid;
+    margin: auto;
+    position: relative;
+}
+
+#game-start-button {
+    width: 100px;
+    margin:auto;
+    padding: auto;
+    z-index: 5;
+}
+
+#game-title {
+    font-family: 'Permanent Marker', cursive;
+    position: absolute;
+    left: 30px;
+}
+
+#game-elements {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: grid;
+    /* Bunch of stuff to make it so you cant select text which messes up game */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+    /* pointer-events: none; */
+    /* margin: auto; */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+} 
+
+#game-elements > * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#score {
+    position: absolute;
+    color:white;
+    top:0%;
+    left: 0%;
+}
+
+#reset-button {
+    position: absolute;
+    bottom: 0;
+}
+
+#reset-button button {
+    background-color: green;
+    color: black;
+}
+
+button {
+    color:black;
+}
+
+#comment-area {
+    grid-area:comments;
+    display: grid;
+    margin-bottom: 20px;
+}
+
+#comment-form {
+    margin:auto;
+    width: 600px;
+}
+
+#footer {
+    grid-area: footer;
+    background-color: #272825;
+    /* background-image: url('Assets/CAMO.jpg'); */
+}
+
+#defaultCanvas0 {
+    /* position: absolute; */
+    /* bottom: 20px; */
+    z-index: -1;
+}
+
+#UserNameSubmitHolder {
+    z-index: 2;
+    /* margin:auto; */
+    display: grid;
+    /* top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+#UserNameSubmitHolder > * {
+    margin: auto;
+    margin-top: 10px;
+    /* padding: 10px; */
+} 
+
+#game-over-text {
+    color: black;
+    font-size: 42px;
+    z-index: 3;
+}
+
+#username-label {
+    color: black;
+}
+
+#restart-button {
+    z-index: 4;
+}
+
+#highscores {
+    /* position: relative; */
+    /* overflow-y:auto; */
+    /* margin:auto; */
+    /* overflow-y: scroll; */
+    /* width: 500px; */
+    grid-area: scores;
+    display: grid;
+}
+
+#table-label {
+    margin: auto;
+    width: 900px;
+    height: 640px;
+    display: grid;
+}
+
+#table-label p {
+    text-align: center;
+    font-size: 60px;
+}
+
+#table-container {
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 800px;
+    height: 600px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 200px;
+}
+
+/* th {
+    font-family: 'Permanent Marker', cursive;
+}
+
+td {
+    font-family: 'Permanent Marker', cursive;
+} */
+
+#highscorestable {
+    /* position: absolute; */
+    /* overflow-y:auto; */
+    /* margin: auto; */
+    /* margin:auto; */
+    width: 800px;
+    height: 600px;
+    margin-bottom: 0px;
+    /* background-color: white; */
+    /* overflow-y: scroll; */
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+/* #highscorestable thead, #highscorestable tbody, #highscorestable tr, #highscorestable td, #highscorestable th {
+    display: block;
+  }
+
+#highscorestable tbody td {
+    float: left;
+    }
+
+#highscorestable thead tr th {
+    float: left;
+    } */
+
+#highscorestable #high-score-header th {
+    position: -webkit-sticky; /* for Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: black;
+}
+
+
+

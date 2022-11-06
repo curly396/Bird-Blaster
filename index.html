@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+  <title>Bird Blaster</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"> -->
+  <script src="p5.js"></script>
+  <script src="p5.dom.js"></script>
+  <!-- <script src="p5.sound.js"></script> -->
+  <script src="ship.js"></script>
+  <script src="bullet.js"></script>
+  <script src="ball.js"></script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script>
+    //Add click event to button holding div
+    // document.getElementById('submit-score-button').addEventListener("click")
+    
+    function mouseDown() {
+    window.MouseDown = true;
+    }
+    function mouseUp() {
+    window.MouseDown = false;}
+    </script>
+</head>
+
+<body onload="mouseUp()">
+  <div id='app'>
+    <div id='header'>
+      <div id='inner-header'>
+        <div id='logo-container'>
+          <h1>Bird Blaster</h1>
+        </div>
+        <ul id='nav-list'>
+          <a id='game-nav-tag'><li>Game</li></a>
+          <a id='score-table-nav-tag'><li>Scores</li></a>
+          <a id='comment-nav-tag' onclick="goToGame()"><li>Comment</li></a>
+          <a id='info-nav-tag'><li>Info</li></a>
+        </ul>
+      </div>
+    </div>
+    <div id='game-container'>
+      <div id="game" onmousedown="mouseDown()" onmouseup="mouseUp()">
+          <div id='game-elements'>
+            <h1 id='game-title'>Bird Blaster</h1>
+            <button id='game-start-button'>Start Game</button>
+            <h1 id="score"></h1>
+            <h3 id='game-over-text'>GAME OVER</h3>
+            <h2 id='user-end-score'></h2>
+            <div id='UserNameSubmitHolder'>
+              <label id='username-label' for='username-input'>Enter Username to Submit Score</label>
+              <input type="text" id='username-input'>
+              <button id='submit-score-button'>Submit</button>
+              <button id='restart-button'>Play Again</button>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div id='highscores'>
+      <!-- <p style="margin: 0 auto;">High Scores</p> -->
+      <div id='table-label'>
+        <p>High Scores</p>
+        <div id='table-container'>
+          <table id="highscorestable" class='table table-dark table-hover table-bordered'>
+            <thead id='high-score-header'>
+              <tr>
+                <th id='rank-column' scope="col">Rank</th>
+                <th id='heroes-column' scope="col">Heroes</td>
+                <th id='scores-column' scope="col">Scores</td>
+              </tr>
+            </thead>
+            <tbody id='high-score-rows'>
+              <tr>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div id='comment-area'>
+      <form onsubmit="return false" id='comment-form'>
+        <div id="comment-submit-form" class="form-group">
+          <label for="user-comments">Tell me about all the things</label>
+          <textarea class="form-control" id="user-comments" rows="5"></textarea>
+          <button id='post-comment-button'>Post Comment</button>
+        </div>
+      </form>
+    </div>
+    <div id='footer'></div>
+  </div>
+</body>
+
+</html>
+
+
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="sketch.js"></script>
