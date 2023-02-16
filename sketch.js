@@ -23,6 +23,13 @@ var ShowDieingShip = 1;
 var UsernameInput;
 var SubmitSocreButton;
 
+//disable spacebar
+document.addEventListener("keydown", function(e) {
+  if (e.key === " ") {
+    e.preventDefault();
+  }
+});
+
 //Tell if user is using mobile device
 // function detectmob() { 
   
