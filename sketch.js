@@ -166,7 +166,7 @@ function draw() {
     }, 350);
   }
   
-  if (ship.life===0 & ShowDieingShip === 0 & ship.y>height-85) {
+  if (ship.life===0 & ShowDieingShip === 0 & ship.y>height-110) {
     endgame();
     return
   }
@@ -317,6 +317,11 @@ function resetSketch() {
 
 function endgame() {
   GameOn = false;
+  
+  balls.forEach((ball) => {
+    ball.show(1)
+  })
+  ship.show(3)
   noLoop();
 
   //hide in game score
@@ -379,10 +384,11 @@ MoveKeysDown = function(up,left,down,right) {
 //start the game
 function startgame() {
   GameOn = true;
+  // ship = new Ship();
   document.getElementById('game-start-button').style.display = 'none';
   ShowInstructions = false;
   document.getElementById('score').style.display = 'block';
-  document.getElementById('game-title').style.display = 'none';
+  // document.getElementById('game-title').style.display = 'none';
 }
 
 //send high score to database

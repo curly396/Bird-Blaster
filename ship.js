@@ -124,7 +124,7 @@ function Ship() {
 
     this.move = function(dir,GameEndSequence, ShipDieing) {
         
-        //The ship falls when the game is over
+        //The ship falls when the game is over so dont disable controls
         if(ShipDieing === true) {
             return;
         }

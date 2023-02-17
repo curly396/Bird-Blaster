@@ -96,7 +96,7 @@ body {
     height:100%;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 500px) {ttp
     #nav-list{
         width: 200px;
     }
@@ -119,6 +119,7 @@ body {
 
 #nav-list a:hover {
     background-color: darkolivegreen;
+    cursor: pointer;
     /* opacity: 100%; */
 }
 
@@ -152,9 +153,11 @@ body {
 }
 
 #game-start-button {
-    width: 100px;
-    margin:auto;
-    padding: auto;
+    margin: 0;
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 5;
 }
 
@@ -168,7 +171,7 @@ body {
     height: 100%;
     width: 100%;
     position: absolute;
-    display: grid;
+    /* display: grid; */
     /* Bunch of stuff to make it so you cant select text which messes up game */
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -241,6 +244,15 @@ button {
     transform: translate(-50%, -50%); */
 }
 
+#user-end-score {
+    text-align: center;
+}
+
+#username-label {
+    width: 100%;
+    text-align: center;
+}
+
 #UserNameSubmitHolder > * {
     margin: auto;
     margin-top: 10px;
@@ -251,6 +263,8 @@ button {
     color: black;
     font-size: 42px;
     z-index: 3;
+    text-align: center;
+    margin-top: 170px;
 }
 
 #username-label {

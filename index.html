@@ -14,7 +14,7 @@
   <script src="ship.js"></script>
   <script src="bullet.js"></script>
   <script src="ball.js"></script>
-
+  <link rel="icon" type="image/x-icon" href="/Assets/favicon.ico">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -52,7 +52,7 @@
     <div id='game-container'>
       <div id="game" onmousedown="mouseDown()" onmouseup="mouseUp()">
           <div id='game-elements'>
-            <h1 id='game-title'>Bird Blaster</h1>
+            <!-- <h1 id='game-title'>Bird Blaster</h1> -->
             <button id='game-start-button'>Start Game</button>
             <h1 id="score"></h1>
             <h3 id='game-over-text'>GAME OVER</h3>
@@ -75,8 +75,8 @@
             <thead id='high-score-header'>
               <tr>
                 <th id='rank-column' scope="col">Rank</th>
-                <th id='heroes-column' scope="col">Heroes</td>
-                <th id='scores-column' scope="col">Scores</td>
+                <th id='heroes-column' scope="col">Player</td>
+                <th id='scores-column' scope="col">Score</td>
               </tr>
             </thead>
             <tbody id='high-score-rows'>
