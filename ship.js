@@ -1,6 +1,6 @@
 function Ship() {
     
-    this.x = width/2;
+    this.x = width/2-68;
     this.y = height/2;
     this.xdir=0;
     this.life = 3;
