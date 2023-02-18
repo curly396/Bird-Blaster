@@ -437,7 +437,7 @@ const highscorestable = document.querySelector("#highscorestable > tbody");
     function loadHighScores() {
       var highscores = []
       var xhr = new XMLHttpRequest();
-      var getHighScoresLoc = 'http://localhost:3003/scores'
+      var getHighScoresLoc = 'http://147.182.132.245:3003/scores'
       xhr.open("GET",getHighScoresLoc);
       xhr.send();
       xhr.onload = function () {
