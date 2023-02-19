@@ -467,8 +467,8 @@ const highscorestable = document.querySelector("#highscorestable > tbody");
         const tr = document.createElement("tr");
         const Scorestd = document.createElement("td");
         const Userstd = document.createElement("td");
-        Userstd.textContent = object.UserName
-        Scorestd.textContent = object.Score
+        Userstd.textContent = object.player_name
+        Scorestd.textContent = object.player_score
         Userstd.setAttribute("class","col-xs-3");
         Scorestd.setAttribute("class","col-xs-3");
         // Userstd.setAttribute("width",50);
