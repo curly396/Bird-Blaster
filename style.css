@@ -321,7 +321,7 @@ td {
     /* margin: auto; */
     /* margin:auto; */
     width: 800px;
-    height: 600px;
+    height: auto;
     margin-bottom: 0px;
     /* background-color: white; */
     /* overflow-y: scroll; */
