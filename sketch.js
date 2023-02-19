@@ -14,8 +14,8 @@ var GameEndSequenceOn = false;
 var ShowInstructions = true;
 var ShipDieing = false;
 var xhr = new XMLHttpRequest();
-var postlocation = 'http://localhost:3003/inputscores';
-var commentpostlocation = 'http://localhost:3003/usercomments';
+var postlocation = 'https://birdblaster.xyz/api/submit-score';
+var commentpostlocation = 'https://birdblaster.xyz/api/submit-comment';
 var scoresubmitted = false;
 var ShowDieingShip = 1;
 
@@ -437,7 +437,7 @@ const highscorestable = document.querySelector("#highscorestable > tbody");
     function loadHighScores() {
       var highscores = []
       var xhr = new XMLHttpRequest();
-      var getHighScoresLoc = 'http://147.182.132.245:3003/scores'
+      var getHighScoresLoc = 'https://birdblaster.xyz/api/scores'
       xhr.open("GET",getHighScoresLoc);
       xhr.send();
       xhr.onload = function () {
